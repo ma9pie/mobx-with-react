@@ -1,26 +1,18 @@
 import { observer } from "mobx-react";
-import { makeAutoObservable } from "mobx";
-
-class Counter {
-  count = 0;
-
-  constructor() {
-    makeAutoObservable(this);
-  }
-
-  increment = () => {
-    this.count++;
-  };
-}
-
-const counter = new Counter();
+import Counter from "components/Counter";
 
 const App = () => {
-  const { count, increment } = counter;
   return (
-    <div>
-      <span>{count}</span>
-      <button onClick={increment}>+</button>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
+      <Counter></Counter>
     </div>
   );
 };
